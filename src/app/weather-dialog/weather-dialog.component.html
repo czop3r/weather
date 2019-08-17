@@ -1,0 +1,56 @@
+<div class="weatherBox" *ngIf="dayInfo">
+  <i class="material-icons" (click)="close()">
+    close
+  </i>
+  <h1>{{ cityName() }}</h1>
+  <div class="date">
+    {{ dayInfo.date | date: 'EEEE, MMM dd' }}th
+  </div>
+  <section class="todayWeather">
+    <div class="todayWeatherIco">
+      <img src="/assets/{{ dayInfo.type }}.png" alt="{{ dayInfo.type }}" height="60" width="60">
+      <h2>{{ dayInfo.temperature }}</h2><h4>&#176;C</h4>
+    </div>
+    <div class="todayWeatherInfo">
+      <div>
+        <p>Precipitation: </p>
+        {{ dayInfo.precipitation }}%
+      </div>
+      <div>
+        <p>Humidity: </p>
+        {{ dayInfo.humidity }}%
+      </div>
+      <div>
+        <p>Wind: </p>
+        {{ dayInfo.windInfo.speed }}mph
+        {{ dayInfo.windInfo.direction }}
+      </div>
+      <div>
+        <p>Pollen Count: </p>
+        {{ dayInfo.pollenCount }}
+      </div>
+    </div>
+  </section>
+  <section class="weekWeather">
+    <div *ngFor="let day of weather" class="weekWeatherDay">
+      <div class="dayName">
+        <strong>{{ dayName(day.date) }}</strong>
+      </div>
+      <div>
+        <img src="/assets/{{ day.type }}.png" alt="{{ day.type }}" height="42" width="42">
+      </div>
+      <div>
+        {{ day.temperature }}&#176;
+      </div>
+      <div>
+        <p>Pollen {{ day.pollenCount }}</p>
+
+      </div>
+    </div>
+  </section>
+  <div class="selectCity">
+    <mat-select [(value)]="selectedCityId" class="select">
+      <mat-option *ngFor="let city of cities" value="{{ city.id }}" (click)="selectedCity()">{{ city.name }}</mat-option>
+    </mat-select>
+  </div>
+</div>

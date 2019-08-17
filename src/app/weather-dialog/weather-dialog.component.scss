@@ -1,0 +1,156 @@
+@import '../../styles.scss'; 
+
+.weatherBox {
+    transition-duration: 0.5s;
+    position: relative;
+
+    @include desktop {
+        width: 700px;
+        padding: 0 20px;
+    }
+
+    @include tablet {
+        width: 400px;
+    }
+
+    @include phone {
+        width: 250px;
+    }
+
+    @include phoneSmall {
+        width: 210px;
+        font-size: small;
+    }
+
+    i {
+        position: absolute;
+        top: -20px;
+        right: -10px;
+        cursor: pointer;
+    }
+
+    .date {
+        width: 100%;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    .todayWeather {
+        font-size: 15px;
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .todayWeatherIco {
+            display: flex;
+            @include phone {
+                width: 90px;
+                align-items: end;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+                h2,h4 {
+                    margin: 0px;
+                }
+            }
+            
+            img {
+                padding: 5px 10px;
+            }
+        }
+
+        .todayWeatherInfo {
+            margin-bottom: 10px;
+            @include desktop {
+                margin-top: -20px;
+            }
+
+            @include phone {
+                margin-top: 15px;
+                width: 110px;
+                font-size: smaller;
+                div {
+                    width: 110px;
+                }
+            }
+
+            p {
+                margin: 0;
+                color: gray;
+                float: left;
+                display: contents;
+            }
+        }
+    }
+
+    .weekWeather {
+        @include desktop {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .weekWeatherDay {
+            transition-duration: 0.5s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            border-top: 1px solid lightgray;
+
+            @include desktop {
+                display: block;
+                border-top: 0;
+                padding: 20px;
+            }
+
+            @include phone {
+                padding: 0;
+            }
+
+            .dayName {
+                width: 30%;
+                text-align: left;
+                @include desktop {
+                    width: 100%;
+                }
+            }
+
+            div {
+                width: 25%;
+                text-align: center;
+                @include desktop {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                }
+
+                img {
+                    padding-top: 10px;
+                }
+
+                p {
+                    color: gray;
+                    margin: 0;
+                }
+            }
+        }
+
+        .weekWeatherDay:hover {
+            background-color: rgba(200, 200, 200, 0.1);
+            transition-duration: 0.5s;
+        }
+    }
+}
+
+.selectCity {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+
+    .select {
+        width: 30%;
+        @include phone {
+            width: 100%;
+        }
+    }
+}

@@ -1,6 +1,3 @@
-# weather
-Simple project with widget about weather
-
 ## General info
 This project is simple widget with weather. 
 	

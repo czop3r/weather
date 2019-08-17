@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$phone-width: 375px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+  @mixin phoneSmall {
+    @media only screen and (max-width: #{$phone-width - 1px}) {
+      @content;
+    }
+  }
+
+  @mixin phone {
+    @media only screen and (max-width: #{$tablet-width - 1px}) {
+      @content;
+    }
+  }
+
+  @mixin tablet {
+    @media all and (max-width: #{$desktop-width - 1px}) {
+      @content;
+    }
+  }
+
+  @mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+      @content;
+    }
+  }
+
+html, body { height: 80%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

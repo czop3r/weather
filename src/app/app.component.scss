@@ -1,0 +1,22 @@
+p {
+    text-align: center;
+    padding: 0 10%;
+    font-size: large;
+    }
+
+.btn {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+i {
+    font-size: 25vh;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    }
+    
+i:hover {
+    color: grey;
+    transition-duration: 0.5s;
+}
