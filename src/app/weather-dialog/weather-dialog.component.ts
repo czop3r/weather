@@ -66,7 +66,7 @@ export class WeatherDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  cityName() {
+  cityName(): string {
     if (this.selectedCityId === '1') {
       return 'Katowice, K-ce';
     } else if (this.selectedCityId === '2') {
