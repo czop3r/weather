@@ -1,5 +1,5 @@
 ## General info
-This project is simple widget with weather. 
+This project is a simple weather widget. 
 	
 ## Setup
 To run this project, install it locally using npm:
